@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { TasksService } from './tasks.service';
 
 @Controller('tasks')
@@ -14,8 +14,9 @@ export class TasksController {
   getTasksTest(): string {
     return 'Teste em tasks';
   }
-  @Get('findTask')
-  getOneTask() {
+  @Get(':id')
+  getOneTask(@Param() params: any) {
+    console.log(params);
     return this.taskService.findOneTask();
   }
 }
