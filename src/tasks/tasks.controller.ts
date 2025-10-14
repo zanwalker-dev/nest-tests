@@ -14,4 +14,8 @@ export class TasksController {
   getTasksTest(): string {
     return 'Teste em tasks';
   }
+  @Get('findTask')
+  getOneTask() {
+    return this.taskService.findOneTask();
+  }
 }
