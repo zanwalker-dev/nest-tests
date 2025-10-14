@@ -1,4 +1,9 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 
-@Controller({})
-export class TasksController {}
+@Controller('/tasks')
+export class TasksController {
+  @Get('/list')
+  getTasksList(): string {
+    return 'Aqui a lista de tasks';
+  }
+}
