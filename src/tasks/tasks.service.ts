@@ -9,4 +9,8 @@ export class TasksService {
   findOneTask() {
     return 'Task especifica';
   }
+
+  create(body: object) {
+    return body;
+  }
 }

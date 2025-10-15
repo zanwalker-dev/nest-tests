@@ -21,8 +21,8 @@ export class TasksController {
   }
 
   @Post('create')
-  createTask(@Body() body: any) {
+  createTask(@Body() body: object) {
     console.log(body);
-    return 'rota para criar task';
+    return this.taskService.create(body);
   }
 }
