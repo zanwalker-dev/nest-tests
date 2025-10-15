@@ -20,7 +20,7 @@ export class TasksController {
     return this.taskService.findOneTask();
   }
 
-  @Post()
+  @Post('create')
   createTask(@Body() body: any) {
     console.log(body);
     return 'rota para criar task';

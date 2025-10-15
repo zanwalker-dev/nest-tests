@@ -4,9 +4,9 @@
 GET {{baseUrl}}/tasks/2
 
 ###
-POST  {{baseUrl}}/tasks HTTP/1.1
+POST  {{baseUrl}}/tasks/create 
 content-type: {{json}}
-{
-    
+
+{ 
     "name": "teste"
 }
