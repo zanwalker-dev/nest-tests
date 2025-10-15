@@ -3,7 +3,14 @@ import { Task } from './entities/task.entity';
 
 @Injectable()
 export class TasksService {
-  private tasks: Task[] = [];
+  private tasks: Task[] = [
+    {
+      id: 1,
+      name: 'Task example 01',
+      description: 'description example 01',
+      completed: false,
+    },
+  ];
 
   getTasks() {
     return [{ id: 1, task: 'comprar pão' }];
