@@ -1,3 +1,12 @@
 @baseUrl = http://localhost:3000
+@json = application/json
 
 GET {{baseUrl}}/tasks/2
+
+###
+POST  {{baseUrl}}/tasks HTTP/1.1
+content-type: {{json}}
+{
+    
+    "name": "teste"
+}
