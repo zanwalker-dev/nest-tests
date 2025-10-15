@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+} from '@nestjs/common';
 import { TasksService } from './tasks.service';
 
 @Controller('tasks')
@@ -31,5 +39,12 @@ export class TasksController {
     console.log('ID ', id);
     console.log('body ', body);
     return 'atualizando com patch';
+  }
+
+  @Delete(':id')
+  deleteTask(@Param('id') id: string) {
+    console.log('ID enviado: ', id);
+
+    return 'essa rota deleta uma task';
   }
 }
