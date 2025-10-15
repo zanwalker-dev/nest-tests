@@ -3,8 +3,16 @@
 
 GET {{baseUrl}}/tasks/2
 
-###
+### POST test
 POST  {{baseUrl}}/tasks/create 
+content-type: {{json}}
+
+{ 
+    "name": "teste"
+}
+
+### PATCH Test
+PATCH {{baseUrl}}/tasks/2
 content-type: {{json}}
 
 { 
