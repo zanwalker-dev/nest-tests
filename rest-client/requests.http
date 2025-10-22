@@ -18,7 +18,7 @@ PATCH {{baseUrl}}/tasks/2
 content-type: {{json}}
 
 { 
-    "name": "teste"
+    "name": "teste alterado"
 }
 
 ### DELETE Test

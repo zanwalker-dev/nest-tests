@@ -58,4 +58,14 @@ export class TasksService {
 
     throw new NotFoundException('Essa tarefa não existe');
   }
+
+  delete(id: string) {
+    const taskIndex = this.tasks.findIndex((task) => task.id === Number(id));
+
+    if (taskIndex < 0) {
+      throw new NotFoundException('Essa tarefa não existe');
+    }
+    this.tasks.splice(taskIndex, 1);
+    return `Tarefa excluida`;
+  }
 }
