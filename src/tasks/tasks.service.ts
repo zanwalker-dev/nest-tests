@@ -1,7 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import {
+  // HttpException,
+  // HttpStatus,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { Task } from './entities/task.entity';
 
 @Injectable()
@@ -24,7 +29,8 @@ export class TasksService {
 
     if (task) return task;
 
-    throw new HttpException('Tarefa não existe', HttpStatus.NOT_FOUND);
+    // throw new HttpException('Tarefa não existe', HttpStatus.NOT_FOUND);
+    throw new NotFoundException('Essa tarefa não existe');
   }
 
   create(body: any) {
@@ -49,5 +55,7 @@ export class TasksService {
       };
       return 'tarefa atualizada';
     }
+
+    throw new NotFoundException('Essa tarefa não existe');
   }
 }
