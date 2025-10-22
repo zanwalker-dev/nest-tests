@@ -16,8 +16,8 @@ export class TasksService {
     return this.tasks;
   }
 
-  findOneTask() {
-    return 'Task especifica';
+  findOneTask(id: string) {
+    return this.tasks.find((task) => task.id === Number(id));
   }
 
   create(body: object) {

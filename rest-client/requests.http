@@ -1,7 +1,7 @@
 @baseUrl = http://localhost:3000
 @json = application/json
 
-GET {{baseUrl}}/tasks/2
+GET {{baseUrl}}/tasks
 
 ### POST test
 POST  {{baseUrl}}/tasks/create 
