@@ -8,7 +8,9 @@ POST  {{baseUrl}}/tasks/create
 content-type: {{json}}
 
 { 
-    "name": "teste"
+    "name": "teste create",
+    "description": "teste description",
+    "completed": false
 }
 
 ### PATCH Test

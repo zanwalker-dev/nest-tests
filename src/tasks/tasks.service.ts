@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Injectable } from '@nestjs/common';
 import { Task } from './entities/task.entity';
 
@@ -20,7 +23,13 @@ export class TasksService {
     return this.tasks.find((task) => task.id === Number(id));
   }
 
-  create(body: object) {
-    return body;
+  create(body: any) {
+    const newId: number = this.tasks.length + 1;
+    const newTask: any = {
+      id: newId,
+      ...body,
+    };
+    this.tasks.push(newTask);
+    return newTask;
   }
 }

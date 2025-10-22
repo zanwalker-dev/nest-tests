@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
 import {
   Body,
   Controller,
@@ -29,7 +30,7 @@ export class TasksController {
   }
 
   @Post('create')
-  createTask(@Body() body: object) {
+  createTask(@Body() body: any) {
     console.log(body);
     return this.taskService.create(body);
   }
