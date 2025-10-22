@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { Task } from './entities/task.entity';
 
 @Injectable()
@@ -20,7 +20,11 @@ export class TasksService {
   }
 
   findOneTask(id: string) {
-    return this.tasks.find((task) => task.id === Number(id));
+    const task = this.tasks.find((task) => task.id === Number(id));
+
+    if (task) return task;
+
+    throw new HttpException('Tarefa não existe', HttpStatus.NOT_FOUND);
   }
 
   create(body: any) {
