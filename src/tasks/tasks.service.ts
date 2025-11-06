@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import {
   // HttpException,
   // HttpStatus,
@@ -37,9 +34,10 @@ export class TasksService {
 
   create(createTaskDto: CreateTaskDto) {
     const newId: number = this.tasks.length + 1;
-    const newTask: any = {
+    const newTask: Task = {
       id: newId,
       ...createTaskDto,
+      completed: false,
     };
     this.tasks.push(newTask);
     return newTask;
