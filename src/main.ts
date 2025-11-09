@@ -7,7 +7,6 @@ async function bootstrap() {
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true, //se TRUE ele remove as chaves que não estão no DTO
-      transform: true, //tenta transformar no tipo necessário geralmente quando recebemos string globalmente(pois estamos usando no GlobalPipes)
     }),
   );
   await app.listen(process.env.PORT ?? 3000);
