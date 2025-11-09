@@ -38,12 +38,15 @@ export class TasksController {
   }
 
   @Patch(':id')
-  updateTask(@Param('id') id: string, @Body() updateTaskDto: UpdateTaskDto) {
+  updateTask(
+    @Param('id', ParseIntPipe) id: string,
+    @Body() updateTaskDto: UpdateTaskDto,
+  ) {
     return this.taskService.update(id, updateTaskDto);
   }
 
   @Delete(':id')
-  deleteTask(@Param('id') id: string) {
+  deleteTask(@Param('id', ParseIntPipe) id: string) {
     return this.taskService.delete(id);
   }
 }
