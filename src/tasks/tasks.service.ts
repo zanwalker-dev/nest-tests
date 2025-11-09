@@ -23,8 +23,8 @@ export class TasksService {
     return this.tasks;
   }
 
-  findOneTask(id: string) {
-    const task = this.tasks.find((task) => task.id === Number(id));
+  findOneTask(id: number) {
+    const task = this.tasks.find((task) => task.id === id);
 
     if (task) return task;
 

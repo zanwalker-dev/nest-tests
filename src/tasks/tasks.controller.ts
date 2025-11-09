@@ -25,7 +25,7 @@ export class TasksController {
     return 'Teste em tasks';
   }
   @Get(':id')
-  getOneTask(@Param('id') id: string) {
+  getOneTask(@Param('id') id: number) {
     console.log(id);
     return this.taskService.findOneTask(id);
   }

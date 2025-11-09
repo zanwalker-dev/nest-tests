@@ -21,6 +21,9 @@ content-type: {{json}}
     "name": "teste alterado"
 }
 
+### GET one by ID
+GET {{baseUrl}}/tasks/2
+
 ### DELETE Test
 DELETE {{baseUrl}}/tasks/2
 content-type: {{json}}
