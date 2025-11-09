@@ -8,7 +8,7 @@ POST  {{baseUrl}}/tasks/create
 content-type: {{json}}
 
 { 
-    "name": "teste create",
+    "name": "Teste",
     "description": "teste description",
     "completed": false
 }
