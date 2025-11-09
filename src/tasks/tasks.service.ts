@@ -43,7 +43,7 @@ export class TasksService {
     return newTask;
   }
 
-  update(id: string, updateTaskDto: UpdateTaskDto) {
+  update(id: number, updateTaskDto: UpdateTaskDto) {
     const taskIndex = this.tasks.findIndex((task) => task.id === Number(id));
 
     if (taskIndex >= 0) {
@@ -59,7 +59,7 @@ export class TasksService {
     throw new NotFoundException('Essa tarefa não existe');
   }
 
-  delete(id: string) {
+  delete(id: number) {
     const taskIndex = this.tasks.findIndex((task) => task.id === Number(id));
 
     if (taskIndex < 0) {
